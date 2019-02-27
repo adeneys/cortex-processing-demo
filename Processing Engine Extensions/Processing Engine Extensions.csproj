@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <RootNamespace>ProcessingEngineDemo.ProcessingEngineExtensions</RootNamespace>
+    <AssemblyName>ProcessingEngineDemo.ProcessingEngineExtensions</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Sitecore.Processing.Engine.Abstractions" Version="9.1.0" />
+    <PackageReference Include="Sitecore.Processing.Engine.Projection" Version="9.1.0" />
+    <PackageReference Include="Sitecore.Processing.Engine.ML.Abstractions" Version="9.1.0" />
+    <ProjectReference Include="..\xConnect Extensions\xConnect Extensions.csproj" />
+    <ProjectReference Include="..\Common\Common.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  <Sitecore>
+    <Processing>
+      <Services>
+        <TaskServicesFactory>
+          <Options>
+            <AlbumRecommendationWorker>
+              <Type>ProcessingEngineDemo.ProcessingEngineExtensions.AlbumRecommendationWorker, ProcessingEngineDemo.ProcessingEngineExtensions</Type>
+            </AlbumRecommendationWorker>
+            <RecommendationFacetStorageWorker>
+              <Type>ProcessingEngineDemo.ProcessingEngineExtensions.RecommendationFacetStorageWorker, ProcessingEngineDemo.ProcessingEngineExtensions</Type>
+            </RecommendationFacetStorageWorker>
+          </Options>
+        </TaskServicesFactory>
+        <AlbumRecommenderModel>
+          <Type>ProcessingEngineDemo.ProcessingEngineExtensions.AlbumRecommendationModel, ProcessingEngineDemo.ProcessingEngineExtensions</Type>
+        </AlbumRecommenderModel>
+      </Services>
+    </Processing>
+    <XConnect.Client>
+      <Services>
+        <Client.Configuration>
+          <Options>
+            <Models>
+              <MusicModel>
+                <TypeName>ProcessingEngineDemo.XConnectExtensions.MusicModel, ProcessingEngineDemo.XConnectExtensions</TypeName>
+                <PropertyName>Model</PropertyName>
+              </MusicModel>
+            </Models>
+          </Options>
+        </Client.Configuration>
+      </Services>
+    </XConnect.Client>
+  </Sitecore>
+</Settings>

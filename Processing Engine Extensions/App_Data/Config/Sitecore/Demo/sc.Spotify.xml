@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+  <Sitecore>
+    <Processing>
+      <Services>
+        <MusicRecommender>
+          <Type>ProcessingEngineDemo.Common.SpotifyMusicRecommender, ProcessingEngineDemo.Common</Type>
+          <As>ProcessingEngineDemo.Common.IMusicRecommender, ProcessingEngineDemo.Common</As>
+          <LifeTime>Singleton</LifeTime>
+        </MusicRecommender>
+      </Services>
+    </Processing>
+  </Sitecore>
+  <spotify>
+    <baseserviceurl>https://api.spotify.com</baseserviceurl>
+    <baseaccountsurl>https://accounts.spotify.com</baseaccountsurl>
+    <!-- Client ID as shown in the Spotify console settings -->
+    <clientid></clientid>
+    <!-- Client Secret as shown in the Spotify console settings -->
+    <clientsecret></clientsecret>
+  </spotify>
+</settings>

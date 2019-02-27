@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+  <xconnect>
+    <!-- URL for the xConnect server -->
+    <uri></uri>
+  </xconnect>
+  <rebus>
+    <!-- Message bus that is used to send messages about processing task registration. -->
+    <Sitecore.Processing.Tasks.Messaging.Buses.TaskRegistrationProducer>
+      <Transport>
+        <SqlServer>
+          <OneWay>false</OneWay>
+          <!-- Connection string to the messaging database used by the Processing Engine -->
+          <ConnectionStringOrName></ConnectionStringOrName>
+          <TableName>Sitecore_Transport</TableName>
+          <InputQueueName>SitecoreProcessingTaskRegistrationProducer_demo</InputQueueName>
+        </SqlServer>
+      </Transport>
+      <Routing>
+        <TypeBasedMappings>
+          <TypeMappings>
+            <RegisterDistributedTaskMap>
+              <Type>Sitecore.Processing.Engine.Abstractions.Messages.RegisterDistributedTask, Sitecore.Processing.Engine.Abstractions</Type>
+              <DestinationQueue>SitecoreProcessingTaskRegistrationConsumer</DestinationQueue>
+            </RegisterDistributedTaskMap>
+            <RegisterDeferredTaskMap>
+              <Type>Sitecore.Processing.Engine.Abstractions.Messages.RegisterDeferredTask, Sitecore.Processing.Engine.Abstractions</Type>
+              <DestinationQueue>SitecoreProcessingTaskRegistrationConsumer</DestinationQueue>
+            </RegisterDeferredTaskMap>
+          </TypeMappings>
+        </TypeBasedMappings>
+      </Routing>
+      <Logging Type="Sitecore.Framework.Messaging.Rebus.DotNetLoggerFactory, Sitecore.Framework.Messaging.Rebus" />
+    </Sitecore.Processing.Tasks.Messaging.Buses.TaskRegistrationProducer>
+    <!-- Message bus that is used to send messages for requesting the progress of a task. -->
+    <Sitecore.Processing.Tasks.Messaging.Buses.TaskProgressProducer>
+      <Transport>
+        <SqlServer>
+          <OneWay>false</OneWay>
+          <!-- Connection string to the messaging database used by the Processing Engine -->
+          <ConnectionStringOrName></ConnectionStringOrName>
+          <TableName>Sitecore_Transport</TableName>
+          <InputQueueName>SitecoreProcessingTaskProgressProducer_demo</InputQueueName>
+        </SqlServer>
+      </Transport>
+      <Routing>
+        <TypeBasedMappings>
+          <TypeMappings>
+            <TaskProgressRequestMap>
+              <Type>Sitecore.Processing.Engine.Abstractions.Messages.TaskProgressRequest, Sitecore.Processing.Engine.Abstractions</Type>
+              <DestinationQueue>SitecoreProcessingTaskProgressConsumer</DestinationQueue>
+            </TaskProgressRequestMap>
+          </TypeMappings>
+        </TypeBasedMappings>
+      </Routing>
+      <Logging Type="Sitecore.Framework.Messaging.Rebus.DotNetLoggerFactory, Sitecore.Framework.Messaging.Rebus" />
+    </Sitecore.Processing.Tasks.Messaging.Buses.TaskProgressProducer>
+  </rebus>
+  <spotify>
+    <baseserviceurl>https://api.spotify.com</baseserviceurl>
+    <baseaccountsurl>https://accounts.spotify.com</baseaccountsurl>
+    <!-- Client ID as shown in the Spotify console settings -->
+    <clientid></clientid>
+    <!-- Client Secret as shown in the Spotify console settings -->
+    <clientsecret></clientsecret>
+  </spotify>
+</settings>
