@@ -9,17 +9,17 @@ This repository shows how to extend the Sitecore Cortex Processing Engine. It in
 
 This repository accompanies the videos from the Sitecore Cortex Processing Engine series:
 
-* (Sitecore Cortex - Processing Engine Architecture)[https://www.youtube.com/watch?v=gNUu0QuW09g]
-* (Sitecore Cortex - Processing Engine Tasks)[https://www.youtube.com/watch?v=DbDSwirB4Oc]
+* [Sitecore Cortex - Processing Engine Architecture](https://www.youtube.com/watch?v=gNUu0QuW09g)
+* [Sitecore Cortex - Processing Engine Tasks](https://www.youtube.com/watch?v=DbDSwirB4Oc)
 
 # How to Build #
 
 * Add the settings for your xConnect server inside the `settings.xml` file in the console project.
-** Set the URI inside the `/settings/xconnect/uri` element.
-** Set the details for the client certificate inside the `/settings/xconnect/certificate`
+  * Set the URI inside the `/settings/xconnect/uri` element.
+  * Set the details for the client certificate inside the `/settings/xconnect/certificate`
 * Set the connection string for the message buses inside the `settings.xml` file in the console project. This must be the same database as the procesing engine uses for the message bus (`messaging` connection string). The config paths are:
-** `/settings/rebus/Sitecore.Processing.Tasks.Messaging.Buses.TaskRegistrationProducer/Transport/SqlServer/ConnectionStringOrName`
-** `/settings/rebus/Sitecore.Processing.Tasks.Messaging.Buses.TaskProgressProducer/Transport/SqlServer/ConnectionStringOrName`
+  * `/settings/rebus/Sitecore.Processing.Tasks.Messaging.Buses.TaskRegistrationProducer/Transport/SqlServer/ConnectionStringOrName`
+  * `/settings/rebus/Sitecore.Processing.Tasks.Messaging.Buses.TaskProgressProducer/Transport/SqlServer/ConnectionStringOrName`
 * Build the solution using Visual Studio
 
 # How to Deploy #
