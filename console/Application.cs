@@ -153,8 +153,7 @@ namespace ProcessingEngineDemo.Console
                 new AlbumDescriptor{ AlbumId = "4o1KnoVpzXZceJxyjELEQB", AlbumName = "Saturday Night Wrist", ArtistId = "6Ghvu1VvMGScGpOUJBAHNH", ArtistName = "Deftones"},
                 new AlbumDescriptor{ AlbumId = "3tsXyEbUQehXPaRFCS8K1n", AlbumName = "Gore", ArtistId = "6Ghvu1VvMGScGpOUJBAHNH", ArtistName = "Deftones"},
                 new AlbumDescriptor{ AlbumId = "4PIVdqvL1Rc7T7Vfsr8n8Q", AlbumName = "Koi No Yokan", ArtistId = "6Ghvu1VvMGScGpOUJBAHNH", ArtistName = "Deftones"},
-                new AlbumDescriptor{ AlbumId = "1GjjBpY2iDwSQs5bykQI5e", AlbumName = "Diamond Eyes", ArtistId = "6Ghvu1VvMGScGpOUJBAHNH", ArtistName = "Deftones"},
-                new AlbumDescriptor{ AlbumId = "1GjjBpY2iDwSQs5bykQI5e", AlbumName = "Diamond Eyes", ArtistId = "6Ghvu1VvMGScGpOUJBAHNH", ArtistName = "Deftones"},
+                new AlbumDescriptor{ AlbumId = "1GjjBpY2iDwSQs5bykQI5e", AlbumName = "Diamond Eyes", ArtistId = "6Ghvu1VvMGScGpOUJBAHNH", ArtistName = "Deftones"}
             };
 
             var random = new Random();

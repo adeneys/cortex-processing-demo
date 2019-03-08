@@ -3,6 +3,7 @@
   <Sitecore>
     <Processing>
       <Services>
+        <!-- Register the music recommender service. -->
         <MusicRecommender>
           <Type>ProcessingEngineDemo.Common.SpotifyMusicRecommender, ProcessingEngineDemo.Common</Type>
           <As>ProcessingEngineDemo.Common.IMusicRecommender, ProcessingEngineDemo.Common</As>

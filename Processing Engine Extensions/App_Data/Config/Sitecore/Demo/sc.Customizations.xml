@@ -3,16 +3,20 @@
   <Sitecore>
     <Processing>
       <Services>
+        <!-- Register custom workers. -->
         <TaskServicesFactory>
           <Options>
+            <!-- Register the AlbumRecommendationWorker used to recommend albums. -->
             <AlbumRecommendationWorker>
               <Type>ProcessingEngineDemo.ProcessingEngineExtensions.AlbumRecommendationWorker, ProcessingEngineDemo.ProcessingEngineExtensions</Type>
             </AlbumRecommendationWorker>
+            <!-- Register the RecommendationFacetStorageWorker used to store the recommended album into the contact facet. -->
             <RecommendationFacetStorageWorker>
               <Type>ProcessingEngineDemo.ProcessingEngineExtensions.RecommendationFacetStorageWorker, ProcessingEngineDemo.ProcessingEngineExtensions</Type>
             </RecommendationFacetStorageWorker>
           </Options>
         </TaskServicesFactory>
+        <!-- Register the custom xConnect model. -->
         <AlbumRecommenderModel>
           <Type>ProcessingEngineDemo.ProcessingEngineExtensions.AlbumRecommendationModel, ProcessingEngineDemo.ProcessingEngineExtensions</Type>
         </AlbumRecommenderModel>
@@ -23,6 +27,7 @@
         <Client.Configuration>
           <Options>
             <Models>
+              <!-- Configure the xConnect client to include the custom model. -->
               <MusicModel>
                 <TypeName>ProcessingEngineDemo.XConnectExtensions.MusicModel, ProcessingEngineDemo.XConnectExtensions</TypeName>
                 <PropertyName>Model</PropertyName>

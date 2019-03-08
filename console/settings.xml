@@ -1,8 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <settings>
   <xconnect>
-    <!-- URL for the xConnect server -->
+    <!-- URL for the xConnect server. -->
     <uri></uri>
+    <!-- Client certificate for the xConnect server. -->
+    <certificate>
+      <AllowInvalidClientCertificates>true</AllowInvalidClientCertificates>
+      <StoreName>My</StoreName>
+      <StoreLocation>LocalMachine</StoreLocation>
+      <FindType>FindByThumbprint</FindType>
+      <FindValue></FindValue>
+    </certificate>
   </xconnect>
   <rebus>
     <!-- Message bus that is used to send messages about processing task registration. -->
@@ -10,7 +18,7 @@
       <Transport>
         <SqlServer>
           <OneWay>false</OneWay>
-          <!-- Connection string to the messaging database used by the Processing Engine -->
+          <!-- Connection string to the messaging database used by the Processing Engine. -->
           <ConnectionStringOrName></ConnectionStringOrName>
           <TableName>Sitecore_Transport</TableName>
           <InputQueueName>SitecoreProcessingTaskRegistrationProducer_demo</InputQueueName>
