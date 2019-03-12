@@ -11,6 +11,7 @@ This repository accompanies the videos from the Sitecore Cortex Processing Engin
 
 * [Sitecore Cortex - Processing Engine Architecture](https://www.youtube.com/watch?v=gNUu0QuW09g)
 * [Sitecore Cortex - Processing Engine Tasks](https://www.youtube.com/watch?v=DbDSwirB4Oc)
+* [Sitecore Cortex - Album Recommendation Example](https://www.youtube.com/watch?v=7UEqCHrHY5Y)
 
 # How to Build #
 
