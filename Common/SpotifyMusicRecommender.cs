@@ -5,7 +5,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json.Linq;
 
 namespace ProcessingEngineDemo.Common
@@ -15,22 +15,19 @@ namespace ProcessingEngineDemo.Common
     /// </summary>
     public class SpotifyMusicRecommender : IMusicRecommender
     {
-        private readonly string _clientId = null;
-        private readonly string _clientSecret = null;
-        private readonly string _baseServiceUrl = null;
-        private readonly string _accountsBaseUrl = null;
+        private readonly SpotifyMusicRecommenderOptions _options = null;
         private SpotifyToken _spotifyToken = null;
 
         /// <summary>
         /// Create a new instance.
         /// </summary>
-        /// <param name="config">The <see cref="IConfiguration"/> to read the settings from.</param>
-        public SpotifyMusicRecommender(IConfiguration config)
+        /// <param name="options">The options containig the settings for the service.</param>
+        public SpotifyMusicRecommender(IOptions<SpotifyMusicRecommenderOptions> options)
         {
-            _clientId = config.GetValue<string>("spotify:clientid");
-            _clientSecret = config.GetValue<string>("spotify:clientsecret");
-            _baseServiceUrl = config.GetValue<string>("spotify:baseserviceurl");
-            _accountsBaseUrl = config.GetValue<string>("spotify:baseaccountsurl");
+            if (options == null)
+                throw new ArgumentNullException(nameof(options));
+
+            _options = options.Value;
         }
 
         /// <summary>
@@ -45,7 +42,7 @@ namespace ProcessingEngineDemo.Common
 
             var client = new HttpClient
             {
-                BaseAddress = new Uri(_baseServiceUrl)
+                BaseAddress = new Uri(_options.BaseServiceUrl)
             };
 
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(_spotifyToken.TokenType, _spotifyToken.AccessToken);
@@ -92,10 +89,10 @@ namespace ProcessingEngineDemo.Common
 
             var client = new HttpClient
             {
-                BaseAddress = new Uri(_accountsBaseUrl)
+                BaseAddress = new Uri(_options.BaseAccountsUrl)
             };
 
-            var rawHeaderValue = Encoding.UTF8.GetBytes($"{_clientId}:{_clientSecret}");
+            var rawHeaderValue = Encoding.UTF8.GetBytes($"{_options.ClientId}:{_options.ClientSecret}");
             var headerValue = Convert.ToBase64String(rawHeaderValue);
 
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", headerValue);

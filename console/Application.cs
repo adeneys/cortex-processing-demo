@@ -471,8 +471,8 @@ namespace ProcessingEngineDemo.Console
         {
             var serviceCollection = new ServiceCollection();
 
-            // config
-            serviceCollection.AddSingleton(_config);
+            // options
+            serviceCollection.AddOptions();
 
             // logging
             serviceCollection.AddLogging();
@@ -495,6 +495,8 @@ namespace ProcessingEngineDemo.Console
             serviceCollection.AddTransient(typeof(IMessageHandler<TaskProgressResponse>), typeof(TaskProgressResponseHandler));
 
             // music recommender
+            var spotifySection = _config.GetSection("spotify");
+            serviceCollection.Configure<SpotifyMusicRecommenderOptions>(x => spotifySection.Bind(x));
             serviceCollection.AddSingleton<IMusicRecommender, SpotifyMusicRecommender>();
 
             return serviceCollection.BuildServiceProvider();
